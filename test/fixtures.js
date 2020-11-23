@@ -23,6 +23,7 @@ export const VERA_SANDBOX_LIST = [
   createSandboxObject('test-sandbox', 11),
   createSandboxObject('test-sandbox', 22),
   createSandboxObject('test-sandbox', 33),
+  createSandboxObject('@myscope/test-sandbox', 44),
 ];
 
 export const VERA_SANDBOX_OBJ = {

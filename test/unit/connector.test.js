@@ -215,7 +215,7 @@ describe('connector.js', () => {
         robotId: 'test-robot-id',
         robotKey: 'test-robot-key',
         appVersion: '0.1.0',
-        sandboxName: 'test-sandbox-22',
+        sandboxName: '@myscope/test-sandbox-44',
         appName: 'test-app-2',
       };
 
@@ -224,7 +224,7 @@ describe('connector.js', () => {
       await cx.scanInSandbox();
 
       expect(logInfoStub).calledWith('Using appId: 2');
-      expect(logInfoStub).calledWith('Setting up new scan for test-sandbox-22, sandbox_id: 22');
+      expect(logInfoStub).calledWith('Setting up new scan for @myscope/test-sandbox-44, sandbox_id: 44');
       expect(logInfoStub).calledWith('New Build ID: 1234');
       expect(logInfoStub).calledWith('New File ID: 2345');
       expect(logInfoStub).calledWith('New Scan Version: Scan Dec 24 2019 (1)');
@@ -237,8 +237,8 @@ describe('connector.js', () => {
         appVersion: '0.1.0',
         autoScan: true,
         scanAllNonfatalTopLevelModules: false,
-        sandboxId: 22,
-        file: '/tmp/test/test-sandbox-22.zip',
+        sandboxId: 44,
+        file: '/tmp/test/myscopetestsandbox44.zip',
       });
     });
     it('should create new sandbox and trigger scan', async () => {

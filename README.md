@@ -1,3 +1,5 @@
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/tveal/veracode-ci) 
+
 # Veracode CI
 
 Goal: Provide a command-line tool to use in NPM scripts for

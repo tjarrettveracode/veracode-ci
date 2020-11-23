@@ -29,6 +29,20 @@ class Connector {
       ? options.scanAllNonfatalTopLevelModules : defaults.scanAllNonfatalTopLevelModules;
     this.autoScan = typeof options.autoScan === 'boolean' ? options.autoScan : defaults.autoScan;
 
+    // console.log('robotId:', this.robotId);
+    // console.log('robotKey:', this.robotKey);
+    console.log('-----');
+    console.log('PROPS');
+    console.log('-----');
+    console.log('appId:', this.appId);
+    console.log('appName:', this.appName);
+    console.log('appVersion:', this.appVersion);
+    console.log('sandboxName:', this.sandboxName);
+    console.log('excludes:', this.excludes);
+    console.log('scanAllNonfatalTopLevelModules:', this.scanAllNonfatalTopLevelModules);
+    console.log('autoScan:', this.autoScan);
+    console.log('-----');
+
     this._validatePropSet('robotId');
     this._validatePropSet('robotKey');
 
@@ -77,7 +91,7 @@ class Connector {
       log.warn('> Will try to scan as an auto-versioned scan...');
     }
 
-    appInfo.file = path.join(os.tmpdir(), `${this.sandboxName}.zip`);
+    appInfo.file = path.join(os.tmpdir(), `${this.sandboxName.replace(/\W/g, '')}.zip`);
     await this.client.createZipArchive(`${process.cwd()}`, appInfo.file, this.excludes);
     const fileId = (await this.client.uploadFile(appInfo)).file._attributes.file_id;
     log.info(`New File ID: ${fileId}`);

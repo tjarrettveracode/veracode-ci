@@ -14,8 +14,12 @@ const main = async () => {
     const options = {
       appId: argv.appId,
       appName: argv.appName,
-      scanAllNonfatalTopLevelModules: argv.scanAllNonfatalTopLevelModules === 'true',
-      autoScan: argv.autoScan === 'true',
+      scanAllNonfatalTopLevelModules: argv.scanAllNonfatalTopLevelModules
+        ? argv.scanAllNonfatalTopLevelModules === 'true'
+        : undefined,
+      autoScan: argv.autoScan
+        ? argv.autoScan === 'true'
+        : undefined,
       excludes,
     };
 
